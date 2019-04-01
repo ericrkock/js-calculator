@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css">
+   <title>JS Calculator by ERK</title>
+</head>
+<body>
+   <!-- FreeCodeCamp Project Tester -->
+   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+   <header>
+      <div>
+         <h1>JavaScript Calculator</h1><hr class="divide-line-header">
+         <p>A FreeCodeCamp Project Challenge</p>
+      </div>
+   </header>
+   <div id="calculator">
+      <div id="screen">
+         <div id="chain">0</div>
+         <div id="display">0</div>
+      </div>
+      <div id="board" >
+         <button id="clear" value="operator" class="padcl" onclick="padClicked(this)">AC</button>
+         <button id="add" value="operator" class="padop" onclick="padClicked(this)">+</button>
+         <button id="subtract" value="operator" class="padop" onclick="padClicked(this)">-</button>
+         <button id="divide" value="operator" class="padop" onclick="padClicked(this)">/</button>
+         <button id="multiply" value="operator" class="padop" onclick="padClicked(this)">x</button>
+         <button id="equals" value="operator" class="padeq" onclick="padClicked(this)">=</button>
+         <button id="backspace" value="operator" class="padnr" onclick="padClicked(this)"><i class="fas fa-backspace"></i></button>
+         <button id="zero" value="digit" class="padnr" onclick="padClicked(this)">0</button>
+         <button id="one" value="digit" class="padnr" onclick="padClicked(this)">1</button>
+         <button id="two" value="digit" class="padnr" onclick="padClicked(this)">2</button>
+         <button id="three" value="digit" class="padnr" onclick="padClicked(this)">3</button>
+         <button id="four" value="digit" class="padnr" onclick="padClicked(this)">4</button>
+         <button id="five" value="digit" class="padnr" onclick="padClicked(this)">5</button>
+         <button id="six" value="digit" class="padnr" onclick="padClicked(this)">6</button>
+         <button id="seven" value="digit" class="padnr" onclick="padClicked(this)">7</button>
+         <button id="eight" value="digit" class="padnr" onclick="padClicked(this)">8</button>
+         <button id="nine" value="digit" class="padnr" onclick="padClicked(this)">9</button>
+         <button id="decimal" value="decimal" class="padnr" onclick="padClicked(this)">.</button>
+      </div>
+   </div>
+   <footer>
+      <div>
+         <span>Presented by Eric R. Kock - Feb. 2019 | 
+            <a href="https://about.me/erickock" target="_blank"> About Me</a> -
+            <a href="https://codepen.io/EricRKock/" target="_blank"> CodePen </a> - 
+            <a href="https://github.com/ericrkock/Code-Training/tree/master/FreeCodeCamp/Projects" target="_blank"> GitHub</a>
+         </span> 
+      </div>
+   </footer>
+   <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* JavaScript Calculator */
+/* ===================== */
+
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+
+/* == Theme Variables == */
+:root {
+   --theme: navy;
+   --light: white;
+   --chain: #ff5900;
+   --acPad: rgb(218, 90, 90);
+   --oparators: #666;
+   --nrPad: #333;
+   --equalPad : rgb(43, 92, 184);
+   
+   --mainBG: #999;
+   --calculatorBG: #fff;
+   --displayBG: black;
+   --borderCalc: #fff;
+   --borderPad: black;
+   --shadow: 0 10px 25px rgba(104, 104, 104, 0.8);
+
+   --btnH : 20%;
+   --btnW: 25%;
+   --btn2H: 40%;
+   --btn2W: 50%;
+}
+
+/* == Main Tags == */
+html {
+   background-color: var(--mainBG);
+}
+body {
+   margin: 30px 50px;
+   line-height: 20px;
+}
+
+header {
+   color: var(--light);
+   text-transform: uppercase;
+   text-align: center;
+   margin-bottom: 30px; 
+}
+
+.divide-line-header {
+   color: var(--light);
+   margin-top: 25px;
+   width: 25%;
+}
+
+/* == The Calculator == */
+#calculator {
+   display: grid;
+   margin: auto;
+   width: 500px;
+   height: 500px;
+   color: var(--light) !important;
+   background-color: var(--calculatorBG);
+   border: 5px;
+   border-style: solid;
+   border-color: var(--borderCalc);
+   border-top-right-radius: 50px;
+   border-top-left-radius: 50px;
+   
+   box-shadow: var(--shadow);
+   grid-template-areas: 
+      'display display display display'
+      'board board board board'
+      'board board board board'
+      'board board board board'
+      'board board board board'
+      'board board board board';
+}
+
+#screen {
+   grid-area: display;
+   display: grid;
+   grid-template-areas: 
+   'chain chain chain chain'
+   'result result result result';
+   margin-bottom: 15px;
+   background-color: var(--displayBG);
+   border-top-right-radius: 50px;
+   border-top-left-radius: 50px;
+   border-bottom-right-radius: 50px;
+   border-bottom-left-radius: 50px;
+}
+
+#chain{
+   display: grid;
+   grid-area: chain;
+   text-align: right;
+   align-items: center;
+   padding-right: 50px;
+   font-size: 24px;
+   font-weight: 100;
+   color: var(--chain);
+   overflow: hidden;
+}
+
+#display {
+   display: grid;
+   grid-area: result;
+   text-align: right;
+   align-items: center;
+   padding-right: 50px;
+   font-size: 32px;
+   font-weight: 900;
+   border-bottom-right-radius: 50px;
+   border-bottom-left-radius: 50px;
+   overflow: hidden;
+}
+
+#board {
+   font-family: share Tech Mono, monospace;
+   grid-area: board;
+   display: grid;
+   grid-template-areas: 
+      'seven eight nine clear clear'
+      'four five six multiplying divide'
+      'one two three add substract'
+      'zero backspace decimal add equal';
+}
+
+#clear, #add, #subtract, #divide, #multiply, #equals, #decimal, #backspace, #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine {
+   display: grid;
+   font-size: 32px;
+   font-weight: 700;
+   text-align: center;
+   align-items: center;
+   border: 0.5px;
+   color: var(--light);
+   border-color: var(--borderPad);
+   border-style: solid;   
+}
+
+#clear, #add, #subtract, #divide, #multiply {
+   background-color: var(--oparators);
+}
+
+#backspace, #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #decimal {
+   background-color: var(--nrPad);
+}
+
+.padnr:hover, .active {
+   background-color: black !important;
+   font-size: 36px;
+}
+
+.padop:hover, .active {
+   background-color: #222 !important
+}
+
+.padcl:hover, .active {
+   background-color: red !important;
+}
+
+.padeq:hover, .active {
+   background-color: blue !important;
+}
+
+#clear {
+   grid-area: clear;
+   border-top-right-radius: 50px;
+   background-color: var(--acPad);
+}
+
+#add {
+   grid-area: add;
+   
+}
+
+#subtract {
+   grid-area: substract;
+}
+
+#divide {
+   grid-area: divide;
+}
+
+#multiply {
+   grid-area: multiplying;
+}
+
+#equals {
+   grid-area: equal;
+   background-color: var(--equalPad);
+}
+
+#decimal {
+   grid-area: decimal;
+}
+
+#backspace {
+   grid-area: backspace;
+   font-size: 32px;
+}
+
+#zero {
+   grid-area: zero;
+}
+
+#one {
+   grid-area: one;
+}
+
+#two {
+   grid-area: two;
+}
+
+#three {
+   grid-area: three;
+}
+
+#four {
+   grid-area: four;
+}
+
+#five {
+   grid-area: five;
+}
+
+#six {
+   grid-area: six;
+}
+
+#seven {
+   grid-area: seven;
+   border-top-left-radius: 50px;
+}
+
+#eight {
+   grid-area: eight;
+}
+
+#nine {
+   grid-area: nine;
+}
+
+
+
+
+/* == CSS Footer == */
+footer {
+   margin-top: 25px;
+   font-size: 12px;
+   color: var(--light);
+   text-align: center;
+}
+
+footer a {
+   color: var(--light);
+   text-decoration: none;
+}
